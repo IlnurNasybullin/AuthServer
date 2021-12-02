@@ -1,0 +1,25 @@
+server:
+  port: 9005
+  servlet:
+    context-path: /auth-server
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/AuthDB
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+Authentication:
+  key: Authorization-Secret-Key
+  strength: 5
+  algorithm: SHA1PRNG
+  seed: 145002235708572350
+jwt:
+  key: JWT-Secret-Key
+  access-token-expires: 1800
+  refresh-token-expires: 604800
+user-password:
+  strength: 10
+  algorithm: DRBG
